@@ -4,7 +4,7 @@ export default class Client {
     #idade: number;
     #idUnico?: string;
 
-    constructor(nome: string, idade:number, id: string = null, idUnico = "123"){
+    constructor(nome: string, idade:number, id: string = null, idUnico: string = null){
         this.#nome = nome
         this.#idade = idade
         this.#id = id
@@ -13,6 +13,10 @@ export default class Client {
 
     static vazio() {
         return new Client('', 0)
+    }
+
+    set idUnico(valor: string) {
+        this.#idUnico = valor
     }
 
     get id() {
@@ -31,3 +35,4 @@ export default class Client {
         return this.#idUnico
     }
 }
+

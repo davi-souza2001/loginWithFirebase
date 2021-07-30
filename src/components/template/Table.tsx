@@ -1,4 +1,5 @@
 import Client from "../../core/Client";
+import useAuth from "../../data/hook/useAuth";
 import { IconeEdicao, IconeLixo } from "../icons";
 
 interface TableProps {
@@ -20,11 +21,14 @@ export default function Table(props: TableProps) {
             </tr>
         )
     }
+    
+     const user = useAuth().usuario.uid
 
     function renderizarDados() {
         return props.clientes?.map((cliente, i) =>{
-            console.log(cliente.nome)
-            if (cliente.nome === "123"){
+            cliente.idUnico = "123"
+            console.log(cliente)
+            if (cliente){
                 return (
                     <tr key={cliente.id}
                     className={`${i % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}`}>

@@ -16,7 +16,6 @@ export default function Home() {
   const [clientes, setClientes] = useState<Client[]>([])
   const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
 
-  console.log(clientes[0])
   useEffect(obterTodos, [])
   
   function obterTodos() {
